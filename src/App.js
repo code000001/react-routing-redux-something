@@ -16,10 +16,9 @@ class App extends Component {
       <Provider store={store}>
         <Switch>
             <Route exact path={'/'} component={HomeScreen}/>
-            <Route path={'/detail/:name'} component={DetailScreen}/>
+            <Route path={'/detail'} component={DetailScreen}/>
         </Switch>
       </Provider>
-        
     );
   }
 }

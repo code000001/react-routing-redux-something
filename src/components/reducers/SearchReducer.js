@@ -37,7 +37,7 @@ export default (state = iniState, action) =>{
         case onPageChanged:
         return {...state, page: action.payload};
         case onSearchPressed:
-        return {...state, loadingSearch: true};
+        return {...state, loadingSearch: true, searchResult: iniState.searchResult};
         case onSearchSucceed:
         return {...state, loadingSearch: false, searchResult: action.payload};
         case onSearchFailed:

@@ -18,6 +18,51 @@
   color: white;
 }
 
+.result-div {
+  display: inline;
+  align-items: center;
+  justify-content: center;
+  padding: 3vh;
+}
+
+.search-result {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  padding: 3vh;
+  border: solid
+}
+
+.img-profile-div{
+  flex: 1;
+  flex-direction: row;
+  justify-content: flex-end;
+  
+}
+
+.detail-div{
+  flex: 1;
+  flex-direction: row;
+  text-align: start;
+}
+
+.detail-des-div{
+  flex: 3;
+  flex-direction: row;
+  text-align: justify;
+  font-family: 'Courier New', Courier, monospace
+}
+
+.img-profile{
+  border-radius: 50%;
+  border: solid;
+  border-color: #000000;
+  height: 25vh;
+  width: 25vh;
+  align-items: flex-end;
+}
+
 .App-link {
   color: #61dafb;
 }

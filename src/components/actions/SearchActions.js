@@ -55,7 +55,12 @@ export const pageChanged = (text) =>{
 
 
 export const searchPressed = (searchText, sort, order, lang, perpage)=>{
-    const extendSearchURL = reqWords+searchText+comLang+ (lang==='' ? 'all' : lang)+(sort !== ''? sortBy+sort :'')+(order !== '' ? orderType+order: '')+(perpage!== '' ? maxPerPage+perpage : maxPerPage+'32')
+    const extendSearchURL = 
+    reqWords+searchText+comLang+ (lang==='' ? 'all' : lang)+
+    (sort !== ''? sortBy+sort :'')+
+    (order !== '' ? orderType+order: '')+
+    (perpage!== '' ? maxPerPage+perpage : maxPerPage+'32')
+    console.log(`${gitHubUrlSearch}${reposSearchUrl}${extendSearchURL}`)
     return (dispatch) =>{
         dispatch({type: onSearchPressed});
                 // console.log(response.data.message )
