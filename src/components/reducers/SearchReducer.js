@@ -7,7 +7,10 @@ import {
     onLanguageChanged,
     onOrderChanged,
     onPerpageChanged,
-    onPageChanged
+    onPageChanged,    
+    onPageChangePressed,
+    onPageChangeSucceed,
+    onPageChangeFailed
 } from './../configs/ActionsTypes'
 
 const iniState = {
@@ -18,7 +21,10 @@ const iniState = {
     page: '',
     searchText : '',
     loadingSearch : false,
-    searchResult: []
+    searchResult: [],
+    error: '',
+    loadingPage: false,
+    pageData: []
 }
 
 export default (state = iniState, action) =>{
@@ -42,6 +48,12 @@ export default (state = iniState, action) =>{
         return {...state, loadingSearch: false, searchResult: action.payload};
         case onSearchFailed:
         return {...state, loadingSearch: false};
+        case onPageChangePressed:
+        return {...state, loadingPage: true};
+        case onPageChangeSucceed:
+        return {...state, pageData: action.payload, loadingPage: false};
+        case onPageChangeFailed:
+        return {...state, error: action.payload, loadingPage: false}
         default:
             return state;
     }

@@ -1,21 +1,27 @@
-import {
-    onPageChangePressed,
-    onPageChangeSucceed
-} from './../configs/ActionsTypes'
+//THIS FILE IS NOT IN USE.
 
-const iniState = {
-    path: '',
-    loadingPage: false
-}
+// import {
+//     onPageChangePressed,
+//     onPageChangeSucceed,
+//     onPageChangeFailed
+// } from './../configs/ActionsTypes'
 
-export default (state = iniState, action) =>{
-    console.log(action)
-    switch (action.type){
-        case onPageChangePressed:
-        return {...state, loadingPage: true};
-        case onPageChangeSucceed:
-        return {...state, path: action.payload, loadingPage: false};
-        default:
-            return state;
-    }
-};
+// const iniState = {
+//     error: '',
+//     loadingPage: false,
+//     pageData: []
+// }
+
+// export default (state = iniState, action) =>{
+//     console.log(action)
+//     switch (action.type){
+//         case onPageChangePressed:
+//         return {...state, loadingPage: true};
+//         case onPageChangeSucceed:
+//         return {...state, pageData: action.payload, loadingPage: false};
+//         case onPageChangeFailed:
+//         return {...state, error: action.payload, loadingPage: false}
+//         default:
+//             return state;
+//     }
+// };

@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux';
 import { searchChanged, searchPressed, sortChanged, languageChanged, orderChanged, perpageChanged } from './actions'
 import {changePagePressed} from './actions/PageActions'
+import {detailPage, ownerUser} from './configs/ApiURL'
 import './../App.css';
 import { SearchResult } from './HomeSearch';
 
@@ -26,7 +27,7 @@ class HomeScreen extends React.Component {
         this.props.perpageChanged(text)
     }
     onProfilePressed(){
-        this.props.changePagePressed(this.props.history, '/detail')
+       this.props.changePagePressed(this.props.history, detailPage,this.props.searchText)
     }
 
     renderResult(){
@@ -47,6 +48,7 @@ class HomeScreen extends React.Component {
                 <div>
                     <label>Search Word : </label>
                     <input value={this.props.searchText} onChange={(text) => this.onSearchChanged(text.target.value)} />
+                    <button onClick={()=> this.onSearchChanged(ownerUser)}>By pass</button>
                 </div>
                 <div>
                     <label>Sort by : </label>
@@ -80,8 +82,13 @@ class HomeScreen extends React.Component {
                     </select>
                 </div>
                 <div>
-                    <button onClick={() => this.onSearchPressed(this.props.searchText, this.props.sort, this.props.order, this.props.language, this.props.per_page)}> CLICK</button>
-                    <button onClick={() => this.onProfilePressed()}>Profile</button>
+                    <button onClick={() => this.onSearchPressed(
+                        this.props.searchText, 
+                        this.props.sort, 
+                        this.props.order, 
+                        this.props.language, 
+                        this.props.per_page)} disabled={this.props.searchText === '' ? true : false}> Search</button>
+                    <button onClick={() => this.onProfilePressed()} disabled={this.props.searchText === '' ? true : false}>Profile</button>
                 </div>
                     {this.renderResult()}
             </div>
@@ -97,7 +104,6 @@ const mapStateToProps = state => {
         order: state.search.order,
         per_page: state.search.per_page,
         searchResult : state.search.searchResult,
-        path : state.page.path
     };
 };
 
