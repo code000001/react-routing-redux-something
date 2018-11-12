@@ -3,7 +3,8 @@ import {
     onPageChangeSucceed,
     onPageChangeFailed,
     onSearchFailed,
-    onSearchSucceed
+    onSearchSucceed,
+    onPageHomeChangeSucceed
 } from './../configs/ActionsTypes'
 import axios from 'axios'
 import { gitHubUrl,reposUrl } from '../configs/ApiURL';
@@ -13,7 +14,7 @@ export const changePagePressed = (history,path, user='') => {
     if(user === ''){
         return (dispatch) => {
             dispatch({ type: onPageChangePressed });
-            changeSucceed(dispatch, [])
+            changeHomeSucceed(dispatch, [])
             history.push(path)
         }  
     }
@@ -59,6 +60,12 @@ export const changePageByTypeURL = (history, user) =>{
 const changeSucceed = (dispatch, data) => {
     dispatch({
         type: onPageChangeSucceed,
+        payload: data
+    });
+};
+const changeHomeSucceed = (dispatch, data) => {
+    dispatch({
+        type: onPageHomeChangeSucceed,
         payload: data
     });
 };

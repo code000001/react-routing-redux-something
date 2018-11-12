@@ -10,7 +10,8 @@ import {
     onPageChanged,    
     onPageChangePressed,
     onPageChangeSucceed,
-    onPageChangeFailed
+    onPageChangeFailed,
+    onPageHomeChangeSucceed
 } from './../configs/ActionsTypes'
 
 const iniState = {
@@ -52,6 +53,8 @@ export default (state = iniState, action) =>{
         return {...state, loadingPage: true};
         case onPageChangeSucceed:
         return {...state, pageData: action.payload, loadingPage: false};
+        case onPageHomeChangeSucceed:
+        return iniState;
         case onPageChangeFailed:
         return {...state, error: action.payload, loadingPage: false}
         default:

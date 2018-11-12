@@ -7,31 +7,38 @@
   height: 40vmin;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
 .result-div {
-  display: inline;
-  align-items: center;
-  justify-content: center;
-  padding: 3vh;
+  width: 300px;
 }
 
 .search-result {
   display: flex;
+  width: 30%;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  flex-direction: row;
   padding: 3vh;
-  border: solid
+  border: solid;
+  margin-top: 1%;
+}
+
+.search-block{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.res-search-block{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.res-search-block-card{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: #020d33
 }
 
 .img-profile-div{
@@ -44,7 +51,7 @@
 .detail-div{
   flex: 1;
   flex-direction: row;
-  text-align: start;
+  text-align: center;
 }
 
 .detail-des-div{
@@ -74,6 +81,44 @@
 
 .big-img-profile:hover{
   cursor: pointer;
+}
+
+.header-input-align{
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  margin: 10px;
+}
+.header-header-align{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  padding: 10px;
+  margin: 10px;
+}
+
+.header-btn-align{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  margin: 10px;
+}
+
+.App-header {
+  background-color: azure;
+  display: flex;
+  flex-direction: column;
+  font-size: calc(3px + 2vmin);
+  color: white;
+  position: relative;
+  top: 0; 
+  left: 0; 
+  width: 100%;
+  border: solid;
+  border-width: 1px;
+  border-color: #dfdfdf
 }
 
 
