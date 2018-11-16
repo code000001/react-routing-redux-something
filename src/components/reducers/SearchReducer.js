@@ -29,7 +29,7 @@ const iniState = {
 }
 
 export default (state = iniState, action) =>{
-    console.log(action)
+    //console.log(action)
     switch (action.type){
         case onSearchChanged:
         return {...state, searchText: action.payload};

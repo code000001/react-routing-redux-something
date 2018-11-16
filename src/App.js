@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import {Route, Switch} from 'react-router-dom'
 import {Provider} from 'react-redux';
 import {createStore, applyMiddleware} from 'redux';
+import logger from 'redux-logger'
 import ReduxThunk from 'redux-thunk';
 import reducers from './components/reducers';
 import './App.css';
 import  HomeScreen from './components/HomeScreen';
 import  DetailScreen from './components/DetailScreen';
 
-const store = createStore(reducers, {}, applyMiddleware(ReduxThunk));
+const store = createStore(reducers, {}, applyMiddleware(ReduxThunk, logger));
 
 class App extends Component {
   render() {
